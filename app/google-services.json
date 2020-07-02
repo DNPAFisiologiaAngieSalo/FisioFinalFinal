@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "656064606518",
+    "firebase_url": "https://fisioahorasifinal.firebaseio.com",
+    "project_id": "fisioahorasifinal",
+    "storage_bucket": "fisioahorasifinal.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:656064606518:android:c07a9b074fe1d976568397",
+        "android_client_info": {
+          "package_name": "com.example.fisiofinalfinal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "656064606518-2i23ooh6063j2uqrgl191ccvveh4vfbm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.fisiofinalfinal",
+            "certificate_hash": "0c931c94b84f41888ee0f8e1e3e672c3cd1c27ad"
+          }
+        },
+        {
+          "client_id": "656064606518-48g2r7lcdmjhv34lcrdqp4o6gk1v4jr3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCM405Yo7k00VBTJco-_zrlrCZOVZ8AXzQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "656064606518-48g2r7lcdmjhv34lcrdqp4o6gk1v4jr3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

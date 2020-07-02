@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Fisio</string>
+    <string name="faceDownText">FaceDown</string>
+    <string name="faceUpText">FaceUp</string>
+    <string name="rollLabel">Roll</string>
+    <string name="pitchLabel">Pich</string>
+    <string name="azimuthLabel">Azimuth</string>
+    <string name="rotationMatrixGenFailureMessage">Error en la rotación</string>
+    <string name="accelerometerMagnetometerLabel">Acelerometro Magnetometro</string>
+    <string name="speakOrientationLabel">Speak Orientation</string>
+    <string name="ttsNotificationsOn">Notificacion ON</string>
+    <string name="ttsNotificationsOff">Notificacion OFF</string>
+    <string name="selectedSensorLabel">Selected Sensor</string>
+    <string name="orientationLabel">Orientation</string>
+    <string name="title_activity_maps">Map</string>
+
+</resources>

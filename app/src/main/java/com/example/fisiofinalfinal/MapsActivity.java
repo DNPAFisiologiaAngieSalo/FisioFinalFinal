@@ -41,7 +41,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-        LatLng latLng = new LatLng(-16.446458,-71.552174);
+        LatLng latLng = new LatLng(-16.446458,-71.552176);
         mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
         mMap.addMarker(new MarkerOptions().position(latLng).title("Marcador aqui"));
         mMap.animateCamera(CameraUpdateFactory.zoomTo(11));
@@ -57,5 +57,5 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     }
 }
-// es trampa, es fake
+// es trampa, es fakenini
 //manda screen

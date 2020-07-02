@@ -40,8 +40,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-
-        LatLng latLng = new LatLng(-16.446458,-71.552176);
+    //Modificando para el commit, guardar la clase, haces click en commit en la flechita verde
+        LatLng latLng = new LatLng(-16.446458,-71.452138);
         mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
         mMap.addMarker(new MarkerOptions().position(latLng).title("Marcador aqui"));
         mMap.animateCamera(CameraUpdateFactory.zoomTo(11));

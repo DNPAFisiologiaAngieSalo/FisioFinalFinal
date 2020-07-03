@@ -40,7 +40,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-    //Modificando para el commit, guardar la clase, haces click en commit en la flechita verde
+    //Modificando para el commit, guardar la clase, haces click en commit en la flechita verde y listo
         LatLng latLng = new LatLng(-16.446458,-71.452138);
         mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
         mMap.addMarker(new MarkerOptions().position(latLng).title("Marcador aqui"));
@@ -57,5 +57,3 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     }
 }
-// es trampa, es fakenini
-//manda screen

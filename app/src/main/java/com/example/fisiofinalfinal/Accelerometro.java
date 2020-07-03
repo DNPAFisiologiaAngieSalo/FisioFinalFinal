@@ -26,14 +26,6 @@ public class Accelerometro implements SensorEventListener {
 
     float anterior_X = 0.0f, anterior_Y = 0.0f, anterior_Z = 0.0f;
     float rango = 0.1f;
-    /*@Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_interfaz_ejercicio);
-        textView = (TextView) findViewById(R.id.textViewEjer);
-
-    }*/
-
 
     public void LlamarAccelerometro() {
        // setContentView(R.layout.activity_interfaz_ejercicio);

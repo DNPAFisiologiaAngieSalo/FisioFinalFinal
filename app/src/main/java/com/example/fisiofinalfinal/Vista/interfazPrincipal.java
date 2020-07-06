@@ -1,4 +1,4 @@
-package com.example.fisiofinalfinal;
+package com.example.fisiofinalfinal.Vista;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,6 +6,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import com.example.fisiofinalfinal.Modelo.MapsActivity;
+import com.example.fisiofinalfinal.R;
 
 public class interfazPrincipal extends AppCompatActivity {
 
@@ -24,27 +27,23 @@ public class interfazPrincipal extends AppCompatActivity {
         });
 
     }
-    public void PantallaVideo(View view){
-        Intent irVideo= new Intent(this,interfazVideo.class);
+    //Boton para redirigir a la pesta de reprduccion de video
+    public void PantallaVideo(View view) {
+        Intent irVideo = new Intent(this, interfazVideo.class);
         startActivity(irVideo);
         finish();
     }
-
-    public void PantallaEjercicio(View view){
-        Intent irEjercicio= new Intent(this,interfazEjercicio.class);
+    // boton que redirige a la pantalla de reconocimiento de ejercicio
+    public void PantallaEjercicio(View view) {
+        Intent irEjercicio = new Intent(this, interfazEjercicio.class);
         startActivity(irEjercicio);
         finish();
     }
-
-    public void PantallaMapa(){
-        Intent irMapa= new Intent(this,MapsActivity.class);
+    //Boton para redirigir a la pantalla de mapa y ver ubicación
+    public void PantallaMapa() {
+        Intent irMapa = new Intent(this, MapsActivity.class);
         startActivity(irMapa);
         finish();
     }
 
-    public void SalirSesión(View view){
-        Intent salir= new Intent(this,MainActivity.class);
-        startActivity(salir);
-        finish();
-    }
 }

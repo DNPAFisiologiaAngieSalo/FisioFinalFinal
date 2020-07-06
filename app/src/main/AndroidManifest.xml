@@ -33,13 +33,13 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name=".MapsActivity"
+            android:name=".Modelo.MapsActivity"
             android:label="@string/title_activity_maps"></activity>
-        <activity android:name=".interfazVideo" />
-        <activity android:name=".interfazEjercicio" />
-        <activity android:name=".interfazPrincipal" />
+        <activity android:name=".Vista.interfazVideo" />
+        <activity android:name=".Vista.interfazEjercicio" />
+        <activity android:name=".Vista.interfazPrincipal" />
         <activity
-            android:name=".MainActivity"
+            android:name=".Controlador.MainActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

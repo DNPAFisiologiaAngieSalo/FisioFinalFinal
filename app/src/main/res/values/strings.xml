@@ -13,5 +13,10 @@
     <string name="selectedSensorLabel">Selected Sensor</string>
     <string name="orientationLabel">Orientation</string>
     <string name="title_activity_maps">Map</string>
+    <string name="errorRegistro">Ha ocurrido un error al registrarse</string>
+    <string name="exitoRegistro">El registro ha sido exitoso</string>
+    <string name="errorIngreso">Ha ocurrido un error al iniciar sesion</string>
+    <string name="exitoIngreso">Inicio de sesión exitoso</string>
+
 
 </resources>

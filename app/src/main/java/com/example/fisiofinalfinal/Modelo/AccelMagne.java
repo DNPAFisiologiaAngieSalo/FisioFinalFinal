@@ -1,6 +1,4 @@
-package com.example.fisiofinalfinal;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.example.fisiofinalfinal.Modelo;
 
 import android.annotation.SuppressLint;
 import android.content.SharedPreferences;
@@ -9,11 +7,11 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.media.AudioManager;
-import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.util.Log;
-import android.view.WindowManager;
 import android.widget.TextView;
+
+import com.example.fisiofinalfinal.R;
 
 import java.util.HashMap;
 
@@ -31,19 +29,47 @@ public class AccelMagne implements SensorEventListener {
     public TextToSpeech tts;
     private boolean isFaceUp;
     public TextView orientationValue;
-
     private HashMap<String, String> ttsParams;
     public SharedPreferences preferences;
     private boolean ttsNotifications;
     private int selectedSensorId;
 
+    //Geter y Seter del Sensor Manager
+    public SensorManager getSensorManager() {
 
-    public void crear(){
+        return sensorManager;
+    }
+
+    public void setSensorManager(SensorManager sensorRecibido) {
+        sensorManager = sensorRecibido;
+    }
+
+    //Seter para Preferences
+    public void setPreferences(SharedPreferences preferenciaRecibida) {
+        preferences = preferenciaRecibida;
+    }
+    //Geter y Seter de Tts
+    public TextToSpeech getTts() {
+        return tts;
+    }
+
+    public void setTts(TextToSpeech ttsRecibido) {
+        tts = ttsRecibido;
+    }
+
+    //Metodo para llamar al acelerometro-magnetometro en otras clases
+    public void LlamarAcelMag() {
         ttsParams = new HashMap<String, String>();
         ttsParams.put(TextToSpeech.Engine.KEY_PARAM_STREAM, String.valueOf(TTS_STREAM));
 
     }
 
+    //Metodo que comparte Preferences
+    public SharedPreferences getPreferences() {
+
+        return preferences;
+    }
+    //Se detecta si el sensorcambió
     @Override
     public void onSensorChanged(SensorEvent event) {
         float[] rotationMatrix;
@@ -65,6 +91,7 @@ public class AccelMagne implements SensorEventListener {
         }
     }
 
+    //Metodo que detecta si la presion cambió
     @SuppressLint("LongLogTag")
     @Override
     public void onAccuracyChanged(Sensor sensor, int accuracy) {
@@ -72,6 +99,7 @@ public class AccelMagne implements SensorEventListener {
                 sensor.getName(), accuracy));
     }
 
+    //Metodo que genera la Matriz de rotación
     @SuppressLint("LongLogTag")
     public float[] generateRotationMatrix() {
         float[] rotationMatrix = null;
@@ -84,13 +112,12 @@ public class AccelMagne implements SensorEventListener {
                             accelerationValues,
                             magneticValues);
             if (!rotationMatrixGenerated) {
-                //Log.w(TAG, getString(R.string.rotationMatrixGenFailureMessage));
                 rotationMatrix = null;
             }
         }
         return rotationMatrix;
     }
-
+    //Metodo que detecta la orientación del celular
     public void determineOrientation(float[] rotationMatrix) {
         float[] orientationValues = new float[3];
         SensorManager.getOrientation(rotationMatrix, orientationValues);
@@ -107,13 +134,14 @@ public class AccelMagne implements SensorEventListener {
         }
     }
 
+    //Metodo que indica si el celular esta Boca arriba
     public void onFaceUp() {
         if (!isFaceUp) {
             orientationValue.setText(R.string.faceUpText);
             isFaceUp = true;
         }
     }
-
+    //Metodo que indica si el celular esta Boca abajo
     public void onFaceDown() {
         if (isFaceUp) {
             orientationValue.setText(R.string.faceDownText);
@@ -121,6 +149,7 @@ public class AccelMagne implements SensorEventListener {
         }
     }
 
+    //Usa los sensores de Acelerometro y Magenetometo
     public void updateSelectedSensor() {
 
         sensorManager.unregisterListener(this);

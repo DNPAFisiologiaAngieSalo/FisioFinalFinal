@@ -14,7 +14,7 @@
         android:background="@drawable/btn_out"
         android:fontFamily="@font/butler_extra_bold"
         android:onClick="regresarMenu"
-        android:text="Salir del ejercicio"
+        android:text="Regresar"
         android:textColor="@android:color/background_light"
         android:textColorHighlight="@android:color/holo_blue_dark"
         android:textColorLink="@android:color/holo_blue_light"

@@ -29,6 +29,7 @@ public class interfazEjercicio extends AppCompatActivity {
         //Se invoca al sensor de accelerometro-Magnetometro para detecctar el movimiento
         magne_acel();
 
+
     }
     //boton para regresar a la pestaña principal
     public void regresarMenu(View view) {

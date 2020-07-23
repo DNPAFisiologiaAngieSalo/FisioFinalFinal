@@ -5,13 +5,17 @@ import androidx.fragment.app.FragmentActivity;
 
 import android.Manifest;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 import com.example.fisiofinalfinal.R;
+import com.example.fisiofinalfinal.Vista.interfazPrincipal;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -20,10 +24,12 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
-
+    private Button salir;
     private GoogleMap mMap;
     private SupportMapFragment mapFragment;
     private LocationManager locationManager;
+
+    //Modificando para el commit, guardar la clase, haces click en commit en la flechita verde y listo
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,8 +41,24 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
 
+
+        salirPestaña();
     }
 
+    public void salirPestaña(){
+        salir = findViewById(R.id.btnLogOutCourier);
+        salir.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent resgresar = new Intent(MapsActivity.this, interfazPrincipal.class);
+                startActivity(resgresar);
+                finish();
+            }
+        });
+
+
+    }
+    
     //Metodo del mapa a mostrar en el celular
     @Override
     public void onMapReady(GoogleMap googleMap) {

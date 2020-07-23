@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.fisiofinalfinal.Modelo.MapsActivity;
+import com.example.fisiofinalfinal.OpenCV.ReconocimientoActivity;
 import com.example.fisiofinalfinal.R;
 
 public class interfazPrincipal extends AppCompatActivity {
@@ -45,5 +46,11 @@ public class interfazPrincipal extends AppCompatActivity {
         startActivity(irMapa);
         finish();
     }
+
+    public void goReconocimientoActivity(View view){
+        Intent intent = new Intent(this, ReconocimientoActivity.class);
+        startActivity(intent);
+    }
+
 
 }

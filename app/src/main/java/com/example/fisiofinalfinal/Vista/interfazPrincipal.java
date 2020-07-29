@@ -7,14 +7,16 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.fisiofinalfinal.Controlador.MainActivity;
 import com.example.fisiofinalfinal.Modelo.MapsActivity;
 import com.example.fisiofinalfinal.OpenCV.ReconocimientoActivity;
 import com.example.fisiofinalfinal.R;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class interfazPrincipal extends AppCompatActivity {
 
     Button irMapa;
-
+    Button btnLogOut;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,6 +26,18 @@ public class interfazPrincipal extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 PantallaMapa();
+            }
+        });
+        //Button para cerrar sesión en Firebase
+        btnLogOut = (Button) findViewById(R.id.btnLogOut);
+        btnLogOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FirebaseAuth.getInstance().signOut();
+                //Volvemos a la interfaz de inicio
+                Intent intent = new Intent(interfazPrincipal.this, MainActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
 

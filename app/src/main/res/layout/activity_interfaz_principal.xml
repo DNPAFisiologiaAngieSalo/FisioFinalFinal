@@ -126,12 +126,19 @@
         app:srcCompat="@drawable/sensores" />
 
     <Button
-        android:id="@+id/btnLogOut"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Cerrar Sesion"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:id="@+id/button7"
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        android:layout_width="196dp"
+        android:layout_height="69dp"
+        android:layout_marginStart="104dp"
+        android:layout_marginTop="76dp"
+        android:background="@drawable/btn_general"
+        android:fontFamily="@font/butler_extra_bold"
+        android:onClick="regresarOpciones"
+        android:text="Regresar"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button6" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

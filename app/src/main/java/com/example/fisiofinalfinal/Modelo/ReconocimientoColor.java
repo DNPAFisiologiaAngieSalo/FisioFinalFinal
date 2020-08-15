@@ -1,4 +1,4 @@
-package com.example.fisiofinalfinal.OpenCV;
+package com.example.fisiofinalfinal.Modelo;
 
 import android.util.Log;
 
@@ -19,12 +19,12 @@ import org.opencv.imgproc.Moments;
 public class ReconocimientoColor {
     private static final String  TAG              = "Print console";
 
-    // Lower and Upper bounds for range checking in HSV color space
+    //Límites inferior y superior para la verificación de rango en el espacio de color HSV
     private Scalar mLowerBound = new Scalar(0);
     private Scalar mUpperBound = new Scalar(0);
-    // Minimum contour area in percent for contours filtering
+    // Área de contorno mínima en porcentaje para el filtrado de contornos
     private static double mMinContourArea = 0.1;
-    // Color radius for range checking in HSV color space
+    // Radio de color para control de rango en espacio de color HSV
     private Scalar mColorRadius = new Scalar(25,50,50,0);
     private Mat mSpectrum = new Mat();
     private List<MatOfPoint> mContours = new ArrayList<MatOfPoint>();
@@ -87,7 +87,6 @@ public class ReconocimientoColor {
 
         Imgproc.findContours(mDilatedMask, contours, mHierarchy, Imgproc.RETR_EXTERNAL, Imgproc.CHAIN_APPROX_SIMPLE);
 
-
         //Dibujar centro de los contornos
         List<Moments> mu = new ArrayList<Moments>(contours.size());
         List<Point> puntos = new ArrayList<Point>(contours.size());
@@ -101,7 +100,8 @@ public class ReconocimientoColor {
             //Imgproc.putText(rgbaImage, "Bola", new Point(x*4, y*4), 3, 0.5, new Scalar(255, 0, 0, 255), 1);
             Log.e(TAG, "X " + (x*4) +"  Y  "+(y*4));
             //guardo los puntos en base a las coordenadas
-            puntos.add(new Point(x*4,y*4));//se multiplica * 4 por se un celular huawei (por que su coordenada X y Y son diferentes)
+            puntos.add(new Point(x*4,y*4));//se multiplica * 4 por que mi celular es huawei (por que su
+            // coordenada X y Y son diferentes)
         }
 
         if(puntos.size() > 2) {
@@ -135,7 +135,7 @@ public class ReconocimientoColor {
                 float betta = (float) Math.acos((a2 + c2 - b2)/(2*a*c));
                 float gamma = (float) Math.acos((a2 + b2 - c2)/(2*a*b));
 
-                // Converting to degree
+                // Convertir a grados
                 alpha = (float) (alpha * 180 / Math.PI);
                 betta = (float) (betta * 180 / Math.PI);
                 gamma = (float) (gamma * 180 / Math.PI);
@@ -153,7 +153,7 @@ public class ReconocimientoColor {
                     Imgproc.putText(rgbaImage, Float.toString(alpha), puntos.get(i), fuente, tamanio_fuente, color, grosor);
                     Imgproc.putText(rgbaImage, Float.toString(gamma), puntos.get(i + 2), fuente, tamanio_fuente, color, grosor);
                 }
-                //dibuja el angulo del  centro del triangulo o angulo
+                //dibuja el angulo del  centro del triangulo
                 Imgproc.putText(rgbaImage, Float.toString(betta), puntos.get(i + 1), fuente, tamanio_fuente, color, grosor);
 
                 //ver si flexiona la rodilla de buena manera
@@ -171,7 +171,7 @@ public class ReconocimientoColor {
 
         }
 
-        // Find max contour area
+        // Encuentra el área de contorno máximo
         double maxArea = 0;
         Iterator<MatOfPoint> each = contours.iterator();
         while (each.hasNext()) {
@@ -181,7 +181,7 @@ public class ReconocimientoColor {
                 maxArea = area;
         }
 
-        // Filter contours by area and resize to fit the original image size
+        // Filtre los contornos por área y cambie el tamaño para que se ajuste al tamaño de la imagen original
         mContours.clear();
         each = contours.iterator();
         while (each.hasNext()) {

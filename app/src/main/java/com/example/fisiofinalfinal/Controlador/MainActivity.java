@@ -10,8 +10,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.fisiofinalfinal.Vista.Opciones;
 import com.example.fisiofinalfinal.R;
-import com.example.fisiofinalfinal.Vista.interfazPrincipal;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -40,7 +40,8 @@ public class MainActivity extends AppCompatActivity {
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
                 if (user != null) {
-                    Intent intent = new Intent(MainActivity.this, interfazPrincipal.class);
+                    //Intent intent = new Intent(MainActivity.this, interfazPrincipal.class);
+                    Intent intent = new Intent(MainActivity.this, Opciones.class);
                     startActivity(intent);
                     finish();
                     return;
@@ -67,7 +68,6 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 final String email = usernames.getText().toString();
                 final String passwV = passwE.getText().toString();
-
                 //Empieza el procedimiento para añadir dentro del apartado correspondiente en la base de dato
                 authUser.createUserWithEmailAndPassword(email, passwV).addOnCompleteListener(MainActivity.this
                         , new OnCompleteListener<AuthResult>() {

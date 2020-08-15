@@ -22,6 +22,7 @@ public class Accelerometro implements SensorEventListener {
     float anterior_X = 0.0f, anterior_Y = 0.0f, anterior_Z = 0.0f;
     float rango = 0.1f;
 
+
     //Geter para enviar un Sensor Manager a otra clase
     public SensorManager getSensorManager() {
 

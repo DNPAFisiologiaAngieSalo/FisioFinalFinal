@@ -1,4 +1,4 @@
-package com.example.fisiofinalfinal.OpenCV;
+package com.example.fisiofinalfinal.Vista;
 
 import java.util.List;
 
@@ -27,6 +27,7 @@ import android.view.WindowManager;
 import android.view.View.OnTouchListener;
 import android.view.SurfaceView;
 
+import com.example.fisiofinalfinal.Modelo.ReconocimientoColor;
 import com.example.fisiofinalfinal.R;
 
 public class ReconocimientoActivity extends Activity implements OnTouchListener, CvCameraViewListener2 {
@@ -172,12 +173,10 @@ public class ReconocimientoActivity extends Activity implements OnTouchListener,
         touchedRegionRgba.release();
         touchedRegionHsv.release();
 
-        return false; // don't need subsequent touch events
+        return false;
     }
 //Frame rate recogido por la camara
     public Mat onCameraFrame(CvCameraViewFrame inputFrame) {
-        //disminuir frames
-
 
         mRgba = inputFrame.rgba();
 

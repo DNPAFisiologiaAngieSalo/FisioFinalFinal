@@ -46,6 +46,17 @@
         <activity android:name=".Vista.interfazVideo" />
         <activity android:name=".Vista.interfazEjercicio" />
         <activity android:name=".Vista.interfazPrincipal" />
+        <activity android:name=".Vista.Opciones" />
+        <activity android:name=".Modelo.Ejercicios" />
+        <activity
+            android:name=".Controlador.Ejercicio"
+            android:screenOrientation="portrait" />
+        <activity android:name=".Modelo.Ejercicio1" />
+        <activity android:name=".Modelo.Ejercicio2"></activity>
+        <activity
+            android:name=".Modelo.Ejercicio2D"
+            android:screenOrientation="portrait" />
+
         <activity
             android:name=".Controlador.MainActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
@@ -56,7 +67,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".OpenCV.ReconocimientoActivity" />
+        <activity android:name=".Vista.ReconocimientoActivity" />
 
     </application>
 
